@@ -4,6 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        System.out.print("Las's Program Start");
+        System.out.println("Las's Program Start");
+
+        new Welcome();
+        new Multiple3();
+        new PrintAsterisk();
     }
 }
