@@ -6,8 +6,6 @@ public class Main {
 	// write your code here
         System.out.println("Las's Program Start");
 
-        new Welcome();
-        new Multiple3();
-        new PrintAsterisk();
+        new UpDown();
     }
 }
