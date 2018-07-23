@@ -7,10 +7,13 @@ interface Calculable{
     public int cal(int a, int b);
 }
 public class Cal {
+
+
     Calculable add = (int a, int b)->{return a+b;};
     Calculable sub = (int a, int b)->{return a-b;};
     Calculable mul = (int a, int b)->{return a*b;};
     Calculable div = (int a, int b)->{return (b!=0)?a/b:0;};
+
 
     Cal(){
         Scanner sc = new Scanner(System.in);

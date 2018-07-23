@@ -6,6 +6,5 @@ public class Main {
 	// write your code here
         System.out.println("Las's Program Start");
 
-        new Consert();
     }
 }
