@@ -1,7 +1,7 @@
 <style>
         img {
-        max-width: 100%;
-        max-height: 100%; 
+        max-width: 50%;
+        max-height: 50%;
         vertical-align:top;
     }
     
@@ -12,7 +12,7 @@
         image-rendering: auto;
         position: absolute;
   right: 73%;
-        width: 15%;
+        width: 12%;
         height: auto;
         transform: translateX(0%);
         top: 150%;
@@ -27,7 +27,7 @@
         position: absolute;
         
   right: 43%;
-        width: 15%;
+        width: 12%;
         height: auto;
         transform: translateX(0%);
         top: 150%;
@@ -41,7 +41,7 @@
         image-rendering: auto;
         position: absolute;
   right: 13%;
-        width: 15%;
+        width: 12%;
         height: auto;
         transform: translateX(0%);
         top: 150%;
@@ -57,49 +57,72 @@
     }
 
     @keyframes _ {
-      0%    {transform: rotateZ(0deg);top: 65%;
+      0%    {transform: rotateZ(0deg);top: 68%;
 
         transform-origin: 50% 70%;
-        width: 15%;
+        width: 12%;
         position: absolute;}
 
       100%{transform: rotateZ(15deg);
         position: absolute;
         transform-origin: 50% 70%;
 
-        width: 17%;
-        top: 65%;}
+        width: 18%;
+        top: 68%;}
     }
     @keyframes __ {
 
       0%{transform: rotateZ(15deg);
-        top: 65%;
-        width: 17%;
+        top: 68%;
+        width: 18%;
         transform-origin: 50% 70%;
         }
-      100%    {transform: rotateZ(0deg);top: 65%;
+      100%    {transform: rotateZ(0deg);top: 68%;
 
         transform-origin: 50% 70%;
-        width: 15%;}
+        width: 12%;}
+    }
+
+
+    .longin{
+        animation: login_ 3s forwards;
+        width: 40%;
+        height: 40%;
+        transform-origin: 50% 50%;
+        top: 30%;
+        left: 30%;
+          transform: rotateX(90deg);
+        position: absolute;
+        background-color: aquamarine;
+    }
+
+    @keyframes login_ {
+      0%    {
+          transform: rotateX(90deg);
+      }
+      100%{
+
+          transform: rotateX(0deg);
+      }
     }
     </style>
 
     <script>
             function f(){
-            document.getElementById("formcreat").innerHTML = "<form method='POST'><input name='name' type='text'/><input name='pass' type='text'/><input type='submit' value='게시하기'/></form>";
+            document.getElementById("formcreat").innerHTML = "<div class='longin'><form method='POST' action='/post'><input name='name' type='text'/><input name='pass' type='text'/><input type='submit' value='게시하기'/></form></div>";
             }
 
             function s(params) {
                 if(document.getElementsByClassName(params)[0].style.getPropertyValue("animation-play-state")!="running" && document.getElementsByClassName(params)[0].style.getPropertyValue("animation-name")!="_"){
                 document.getElementsByClassName(params)[0].style.setProperty("animation","_");
-                document.getElementsByClassName(params)[0].style.setProperty("animation-duration","0.5s");
+                document.getElementsByClassName(params)[0].style.setProperty("animation-duration","0.4s");
                 document.getElementsByClassName(params)[0].style.setProperty("animation-fill-mode","forwards");
                 }
             }
             function sout(params) {
                 if(document.getElementsByClassName(params)[0].style.getPropertyValue("animation-play-state")!="running" && document.getElementsByClassName(params)[0].style.getPropertyValue("animation-name")!="__"){
                 document.getElementsByClassName(params)[0].style.setProperty("animation","__");
-                document.getElementsByClassName(params)[0].style.setProperty("animation-duration","0.5s");
+                document.getElementsByClassName(params)[0].style.setProperty("animation-duration","0.4s");
                 document.getElementsByClassName(params)[0].style.setProperty("animation-fill-mode","forwards");
                 }
             }

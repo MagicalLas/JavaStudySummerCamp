@@ -256,19 +256,19 @@
   7.5%  {  transform: translateY(-50%);
   top: 50%;
 
-  width: 15%;
+  width: 12%;
   height: auto;
   }
   10%  {  top: 80%;
 
-    width: 15%;
+    width: 12%;
   height: auto;
   }
   20%{top: 80%;
-    width: 15%;
+    width: 12%;
   height: auto;}
   100%{top: 80%;
-    width: 15%;
+    width: 12%;
   height: auto;}
 }
 
@@ -295,27 +295,27 @@
   7.5%  {  transform: translateY(-50%);
   top: 50%;
 
-  width: 15%;
+  width: 12%;
   height: auto;
   }
   10%  {  top: 80%;
 
-    width: 15%;
+    width: 12%;
   height: auto;
   }
   20%{top: 80%;
 
     right: 43%;
-    width: 15%;
+    width: 12%;
   height: auto;}
   30%{top: 80%;
   right: 73%;
-    width: 15%;
+    width: 12%;
   height: auto;}
 
   100%{top: 80%;
   right: 73%;
-    width: 15%;
+    width: 12%;
   height: auto;}
 }
 
@@ -341,28 +341,28 @@
 
   7.5%  {  transform: translateY(-50%);
   top: 50%;
-  width: 15%;
+  width: 12%;
   height: auto;
   }
 
   10%  {  top: 80%;
-    width: 15%;
+    width: 12%;
   height: auto;
   }
 
   20%{top: 80%;
     right: 43%;
-    width: 15%;
+    width: 12%;
   height: auto;}
 
   30%{top: 80%;
   right: 13%;
-    width: 15%;
+    width: 12%;
   height: auto;}
 
   100%{top: 80%;
   right: 13%;
-    width: 15%;
+    width: 12%;
   height: auto;}
 }
 </style>

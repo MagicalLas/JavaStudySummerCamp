@@ -2,9 +2,7 @@ package com.example.demo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -58,4 +56,9 @@ public class BaseController {
     }
 
 
+    @RequestMapping(value = "/post", method = RequestMethod.POST)
+    public String postTest(Model m, @RequestParam(value  = "name") String page){
+        m.addAttribute("message","Image/wallpaper-master/"+page+".png");
+        return "info";
+    }
 }
