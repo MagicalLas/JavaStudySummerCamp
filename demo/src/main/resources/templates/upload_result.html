@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+
+<div>
+    <ul>
+        <li th:each="file : ${files}" th:text="${file}"></li>
+    </ul>
+</div>
+<a href="/single_upload_form" >다시 업로드</a>
+</body>
+</html>
+

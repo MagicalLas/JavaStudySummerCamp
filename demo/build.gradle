@@ -9,6 +9,7 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+
 	}
 }
 
@@ -31,7 +32,10 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-freemarker')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.8'
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
