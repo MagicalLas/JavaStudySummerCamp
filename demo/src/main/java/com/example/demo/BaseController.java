@@ -2,11 +2,18 @@ package com.example.demo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 @Controller
 public class BaseController {
@@ -57,8 +64,55 @@ public class BaseController {
 
 
     @RequestMapping(value = "/post", method = RequestMethod.POST)
-    public String postTest(Model m, @RequestParam(value  = "name") String page){
-        m.addAttribute("message","Image/wallpaper-master/"+page+".png");
+    public String postTest(Model m,  @RequestParam(value  = "file_") MultipartFile p){
+        m.addAttribute("message","Image/wallpaper-master/"+1+".png");
+        File f = new File("F://as1.png");
+        try {
+            p.transferTo(f);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return "info";
     }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/single_upload")
+    public String fileUpload(@RequestParam("name") String name,
+                             @RequestParam("file") MultipartFile file,
+                             RedirectAttributes redirectAttributes) {
+
+
+        if (!file.isEmpty()) {
+            try {
+                File f = new File("F:\\"+(i++)+".png");
+                file.transferTo(f);
+                System.out.println("");
+                System.out.println("");
+                System.out.println("GOOD");
+                System.out.println("");
+                System.out.println("");
+            }
+            catch (Exception e) {
+                System.out.println("");
+                System.out.println("");
+                System.out.println("FAIL");
+                System.out.println("");
+                System.out.println("");
+            }
+        }
+        else {
+            System.out.println("");
+            System.out.println("");
+            System.out.println("FAIL");
+            System.out.println("");
+            System.out.println("");
+        }
+        return "redirect:LAS";
+    }
+    @RequestMapping(value="/single_upload_form", method = RequestMethod.GET)
+    public String singleUploadForm() {
+        return "single_upload_form";
+    }
+
+
+
 }

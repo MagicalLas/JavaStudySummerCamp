@@ -106,10 +106,9 @@
       }
     }
     </style>
-
     <script>
             function f(){
-            document.getElementById("formcreat").innerHTML = "<div class='longin'><form method='POST' action='/post'><input name='name' type='text'/><input name='pass' type='text'/><input type='submit' value='게시하기'/></form></div>";
+            document.getElementById("formcreat").innerHTML = "<div class='longin'><form method='POST' action='/post' enctype="multipart/form-data"><input name='name' type='text'/><input class="file" type="file" file-model="myFile" name="myFile"/><input type='submit' value='게시하기'/></form></div>";
             }
 
             function s(params) {
