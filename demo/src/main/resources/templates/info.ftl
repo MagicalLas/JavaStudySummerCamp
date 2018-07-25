@@ -108,7 +108,7 @@
     </style>
     <script>
             function f(){
-            document.getElementById("formcreat").innerHTML = "<div class='longin'><form method='POST' action='/post' enctype="multipart/form-data"><input name='name' type='text'/><input class="file" type="file" file-model="myFile" name="myFile"/><input type='submit' value='게시하기'/></form></div>";
+            document.getElementById("formcreat").innerHTML = "<div><form method='POST' enctype='multipart/form-data' action='/single_upload'><table><tr><td>File to upload:</td><td><input type='file' name='file' /></td></tr><tr><td>Name:</td><td><input type='text' name='name' /></td></tr><tr><td></td><td><input type='submit' value='Upload' /></td></tr></table></form></div>";
             }
 
             function s(params) {

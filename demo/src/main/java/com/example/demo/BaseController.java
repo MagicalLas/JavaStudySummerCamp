@@ -45,7 +45,7 @@ public class BaseController {
         String go_path = "test";
         if(is_first) {
             Cookie setCookie = new javax.servlet.http.Cookie("notfirst", i+""); // 쿠키 생성
-            setCookie.setMaxAge(60*60*24); // 기간을 하루로 지정
+            setCookie.setMaxAge(60); // 기간을 하루로 지정
             response.addCookie(setCookie);
 
             m.addAttribute("message","Image/wallpaper-master/back"+((i++)%3+1)+".png");
