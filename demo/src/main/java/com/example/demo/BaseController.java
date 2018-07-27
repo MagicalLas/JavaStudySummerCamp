@@ -31,8 +31,8 @@ public class BaseController {
         if(getCookie != null){
             for(int i=0; i<getCookie.length; i++) {
                 Cookie c = getCookie[i];
-                String name = c.getName(); // 쿠키 이름 가져오기
-                String value = c.getValue(); // 쿠키 값 가져오기
+                String name = c.getName();
+                String value = c.getValue();
                 if (name.equals("notfirst")) {
                     is_first = false;
                     try{
@@ -44,8 +44,8 @@ public class BaseController {
 
         String go_path = "test";
         if(is_first) {
-            Cookie setCookie = new javax.servlet.http.Cookie("notfirst", i+""); // 쿠키 생성
-            setCookie.setMaxAge(60); // 기간을 하루로 지정
+            Cookie setCookie = new javax.servlet.http.Cookie("notfirst", i+"");
+            setCookie.setMaxAge(60);
             response.addCookie(setCookie);
 
             m.addAttribute("message","Image/wallpaper-master/back"+((i++)%3+1)+".png");
@@ -63,19 +63,29 @@ public class BaseController {
     }
 
 
-    @RequestMapping(value = "/post", method = RequestMethod.POST)
-    public String postTest(Model m,  @RequestParam(value  = "file_") MultipartFile p){
-        m.addAttribute("message","Image/wallpaper-master/"+1+".png");
-        File f = new File("F://as1.png");
+    @RequestMapping(value = "/single_upload", method = RequestMethod.POST)
+    public String postTest(Model m,  @RequestParam(value  = "file") MultipartFile p){
+        m.addAttribute("message","Image/wallpaper-master/"+i+".png");
+        File f = new File("F://Limage/as"+(i++)+".png");
         try {
             p.transferTo(f);
+            System.out.println("");
+            System.out.println("");
+            System.out.println("GOOD");
+            System.out.println("");
+            System.out.println("");
         } catch (Exception e) {
+            System.out.println("");
+            System.out.println("");
+            System.out.println("FAIL");
+            System.out.println("");
+            System.out.println("");
             e.printStackTrace();
         }
-        return "info";
+        return "redirect:LAS";
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/single_upload")
+    @RequestMapping(method = RequestMethod.POST, value = "/single_upload_")
     public String fileUpload(@RequestParam("name") String name,
                              @RequestParam("file") MultipartFile file,
                              RedirectAttributes redirectAttributes) {
@@ -83,7 +93,8 @@ public class BaseController {
 
         if (!file.isEmpty()) {
             try {
-                File f = new File("F:\\"+(i++)+".png");
+                i+=1;
+                File f = new File("F:\\"+(i)+".png");
                 file.transferTo(f);
                 System.out.println("");
                 System.out.println("");
@@ -108,6 +119,12 @@ public class BaseController {
         }
         return "redirect:LAS";
     }
+
+    @RequestMapping(value = "/game")
+    public String tetris(){
+        return "game";
+    }
+
     @RequestMapping(value="/single_upload_form", method = RequestMethod.GET)
     public String singleUploadForm() {
         return "single_upload_form";

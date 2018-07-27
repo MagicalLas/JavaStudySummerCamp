@@ -108,7 +108,7 @@
     </style>
     <script>
             function f(){
-            document.getElementById("formcreat").innerHTML = "<div><form method='POST' enctype='multipart/form-data' action='/single_upload'><table><tr><td>File to upload:</td><td><input type='file' name='file' /></td></tr><tr><td>Name:</td><td><input type='text' name='name' /></td></tr><tr><td></td><td><input type='submit' value='Upload' /></td></tr></table></form></div>";
+            document.getElementById("formcreat").innerHTML = "<div class = 'longin' ><form method='POST' enctype='multipart/form-data' action='/single_upload'><table><tr><td>File to upload:</td><td><input type='file' name='file' /></td></tr><tr><td>Name:</td><td><input type='text' name='name' /></td></tr><tr><td></td><td><input type='submit' value='Upload' /></td></tr></table></form></div>";
             }
 
             function s(params) {
@@ -132,7 +132,7 @@
 
         <img src="Image/icon.png" class="Up1" onmousedown = "f();" onmouseenter = "s('Up1');" onmouseout="sout('Up1');"/>
 
-        <img src="Image/icon.png" class="Up2" onmouseenter = "s('Up2');" onmouseout="sout('Up2');"/>
+        <img src="Image/icon.png" class="Up2" onmouseenter = "s('Up2');" onmouseout="sout('Up2');" onmousedown="location.href='http://localhost:8080/game'"/>
 
         <img src="Image/icon.png" class="Up3" onmouseenter = "s('Up3');" onmouseout="sout('Up3');"/>
         <div id="formcreat"></div>

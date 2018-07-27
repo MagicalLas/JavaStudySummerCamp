@@ -280,7 +280,7 @@
   position: absolute;
   width: 0%;
   height: auto;
-  right: 43%;
+  right: 73%;
   transform: translateX(0%);
   top: 50%;
   overflow: hidden;
@@ -291,15 +291,18 @@
 @keyframes DoubleStrideCenter2_ {
   0%    { padding-left: 0%;
   width: 0%;
+  right: 43%;
   height: auto;}
   7.5%  {  transform: translateY(-50%);
   top: 50%;
 
+  right: 43%;
   width: 12%;
   height: auto;
   }
   10%  {  top: 80%;
 
+  right: 43%;
     width: 12%;
   height: auto;
   }
@@ -327,7 +330,7 @@
   position: absolute;
   width: 0%;
   height: auto;
-  right: 43%;
+  right: 13%;
   transform: translateX(0%);
   top: 50%;
   overflow: hidden;
@@ -337,16 +340,19 @@
 @keyframes DoubleStrideCenter3_ {
   0%    { padding-left: 0%;
   width: 0%;
+  right: 43%;
   height: auto;}
 
   7.5%  {  transform: translateY(-50%);
   top: 50%;
   width: 12%;
   height: auto;
+  right: 43%;
   }
 
   10%  {  top: 80%;
     width: 12%;
+  right: 43%;
   height: auto;
   }
 
@@ -365,13 +371,65 @@
     width: 12%;
   height: auto;}
 }
+
+
+
+
+    @keyframes _ {
+      0%    {transform: rotateZ(0deg);top: 68%;
+
+        position: absolute;
+
+        width: 12%;
+
+        transform-origin: 50% 70%;
+        position: absolute;}
+
+      100%{transform: rotateZ(15deg);
+
+        transform-origin: 50% 70%;
+        width: 18%;
+        top: 68%;}
+    }
+    @keyframes __ {
+
+      0%{transform: rotateZ(15deg);
+
+        transform-origin: 50% 70%;
+        top: 68%;
+        width: 18%;
+        }
+      100%    {transform: rotateZ(0deg);top: 68%;
+
+        transform-origin: 50% 70%;
+        width: 12%;}
+    }
+
 </style>
 
 <script>
   function f() {
     var table = document.getElementById("t");
   }
+
 </script>
+
+    <script>
+
+            function s(params) {
+                document.getElementsByClassName(params)[0].style.setProperty("animation","_");
+                document.getElementsByClassName(params)[0].style.setProperty("animation-duration","0.4s");
+                document.getElementsByClassName(params)[0].style.setProperty("animation-fill-mode","forwards");
+            }
+            function sout(params) {
+                if(document.getElementsByClassName(params)[0].style.getPropertyValue("animation-play-state")!="running" && document.getElementsByClassName(params)[0].style.getPropertyValue("animation-name")!="__"){
+                document.getElementsByClassName(params)[0].style.setProperty("animation","__");
+                document.getElementsByClassName(params)[0].style.setProperty("animation-duration","0.4s");
+                document.getElementsByClassName(params)[0].style.setProperty("animation-fill-mode","forwards");
+                }
+            }
+            </script>
+
 <html>
     <body style="background-image: url(${message}); overflow: hidden;" >
 
@@ -380,11 +438,11 @@
     </div>
         <div class="DoubleStrideRight1">
     </div>
-    <img src="/Image/icon.png" class="DoubleStrideCenter1"  onmouseenter = "f();" id = "t" onmousedown="location.href='http://localhost:8080/info'"/>
+    <img src="/Image/icon.png" class="DoubleStrideCenter1"  id = "t" onmousedown="location.href='http://localhost:8080/game'" onmouseenter = "s('DoubleStrideCenter1');" onmouseout="sout('DoubleStrideCenter1');"/>
 
-    <img src="/Image/icon.png" class="DoubleStrideCenter2"/>
+    <img src="/Image/icon.png" class="DoubleStrideCenter2" onmousedown="location.href='http://localhost:8080/info'" onmouseenter = "s('DoubleStrideCenter2');" onmouseout="sout('DoubleStrideCenter2');"/>
 
-    <img src="/Image/icon.png" class="DoubleStrideCenter3"/>
+    <img src="/Image/icon.png" class="DoubleStrideCenter3" onmousedown="location.href='http://localhost:8080/info'" onmouseenter = "s('DoubleStrideCenter3');" onmouseout="sout('DoubleStrideCenter3');"/>
 
     <div class="Stride1">
         </div>
