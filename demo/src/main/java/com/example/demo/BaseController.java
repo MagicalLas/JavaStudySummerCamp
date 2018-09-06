@@ -7,17 +7,16 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.ServletSecurityElement;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 @Controller
 public class BaseController {
     int i = 1;
+    boolean pass = false;
     @RequestMapping(value = "/w")
     public @ResponseBody String view(){
         return "test";
@@ -122,7 +121,7 @@ public class BaseController {
 
     @RequestMapping(value = "/game")
     public String tetris(){
-        return "game";
+        return "single_upload_form";
     }
 
     @RequestMapping(value="/single_upload_form", method = RequestMethod.GET)
@@ -130,6 +129,41 @@ public class BaseController {
         return "single_upload_form";
     }
 
+    @RequestMapping(value = "/HAKO", method = RequestMethod.POST)
+    public @ResponseBody String HAKO(@RequestParam("Source") String Source, @RequestParam("Input") String input, @RequestParam("Result") String result){
+        String sd = null;
+        try {
+            BufferedWriter out = new BufferedWriter(new FileWriter("F:/out.py"));
+            if(result.equals("go"))
+            {out = new BufferedWriter(new FileWriter("out.go"));}
+            String s = Source;
 
+            out.write(s); out.newLine();
+            out.close();
+            System.out.println(0);
+            Process p = new ProcessBuilder("python", "F:/out.py").start();
+            if(result.equals("go"))
+            {
+                p = new ProcessBuilder("go  run"," out.go").start();
+            }
+            System.out.println(1);
+            System.out.println(2);
 
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(p.getOutputStream()));
+            System.out.println(input);
+            bw.write(input);
+            bw.flush();
+            sd = new BufferedReader( new InputStreamReader (p.getInputStream ()) ).readLine();
+            System.out.println(pass=result.equals(sd));
+            p.destroy();
+        } catch (IOException e) {}
+        catch (Exception e){}
+        System.out.println(sd);
+        return sd;
+    }
+
+    @RequestMapping(value = "/HAKO")
+    public @ResponseBody String HAKO_(){
+        return "0";
+    }
 }

@@ -1,8 +1,7 @@
 
 <body>
 
-<div><form method='POST' enctype='multipart/form-data' action='/single_upload'><table><tr><td>File to upload:</td><td><input type='file' name='file' /></td></tr><tr><td>Name:</td><td><input type='text' name='name' /></td></tr><tr><td></td><td><input type='submit' value='Upload' /></td></tr></table></form></div>
-
+                <div><form method='POST' action='/HAKO'><table>Name:<textarea name='Source' cols='40' rows='8'/></textarea>Input:<textarea name='Input' cols='20' rows='8'/></textarea>언어종류:<input type='text' name='Result'/><input type='submit' value='Upload' /></table></form></div>
 
 </body>
 </html>
